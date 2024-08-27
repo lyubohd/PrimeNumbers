@@ -1,0 +1,12 @@
+services:
+  producer:
+    build: ./producer
+    ports:
+      - "8081:8081"
+    environment:
+      - CONSUMER_URL=http://consumer:8082
+
+  consumer:
+    build: ./consumer
+    ports:
+      - "8082:8082"
